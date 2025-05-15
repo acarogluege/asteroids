@@ -36,7 +36,7 @@ def main():
                 return
             #print(list(drawable))       
         # Screen fill color
-        fill_color = (0, 0, 0)
+        fill_color = (33,86,105)
         screen.fill(fill_color)
 
         # Draw the player
