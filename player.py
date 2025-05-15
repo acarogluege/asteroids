@@ -12,7 +12,6 @@ class Player(CircleShape):
     def __init__(self, x, y):
         super().__init__(x,y,PLAYER_RADIUS)
         self.rotation = 0
-        keys = pygame.key.get_pressed()
         self.timer = 0
 
     def draw(self, screen):
@@ -63,7 +62,6 @@ class Player(CircleShape):
 
 
     def shoot(self,shots_group):
-        forward = pygame.Vector2(0, 1).rotate(self.rotation)
         new_shot = Shot(self.position)
-        new_shot.velocity = forward * PLAYER_SHOOT_SPEED
+        new_shot.velocity = pygame.Vector2(0, 1).rotate(self.rotation) * PLAYER_SHOOT_SPEED
         shots_group.add(new_shot)
