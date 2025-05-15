@@ -53,7 +53,7 @@ def main():
                 if hasattr(shot, "position") and asteroid.collision(shot):
                     print("Hit!")
                     shot.kill()
-                    asteroid.kill()
+                    asteroid.split()
                     break
         
         # Update display
