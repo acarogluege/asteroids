@@ -1,5 +1,6 @@
 from constants import SHOT_RADIUS
 from constants import PLAYER_SHOOT_SPEED
+from constants import SCREEN_WIDTH, SCREEN_HEIGHT
 from circleshape import CircleShape
 import pygame
 

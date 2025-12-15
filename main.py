@@ -11,9 +11,6 @@ def main():
     pygame.init()
     print("Starting Asteroids!")
     
-    # Get display info for better cross-device support
-    display_info = pygame.display.Info()
-    
     # Allow window to be resizable
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT), pygame.RESIZABLE)
     pygame.display.set_caption("Asteroids Game")

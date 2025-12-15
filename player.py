@@ -4,6 +4,7 @@ from constants import PLAYER_TURN_SPEED
 from constants import PLAYER_SPEED
 from constants import PLAYER_SHOOT_SPEED
 from constants import PLAYER_SHOOT_COOLDOWN
+from constants import SCREEN_WIDTH, SCREEN_HEIGHT
 from shot import Shot
 import pygame
 
@@ -60,7 +61,6 @@ class Player(CircleShape):
             self.position += -forward * dt * PLAYER_SPEED
         
         # Wrap around screen boundaries
-        from constants import SCREEN_WIDTH, SCREEN_HEIGHT
         if self.position.x < 0:
             self.position.x = SCREEN_WIDTH
         elif self.position.x > SCREEN_WIDTH:
