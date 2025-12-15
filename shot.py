@@ -12,3 +12,8 @@ class Shot(CircleShape):
         self.position.x += self.velocity.x * dt
         self.position.y += self.velocity.y * dt
         
+        # Remove shots that go off screen
+        if (self.position.x < 0 or self.position.x > SCREEN_WIDTH or
+            self.position.y < 0 or self.position.y > SCREEN_HEIGHT):
+            self.kill()
+        

@@ -89,11 +89,11 @@ def main():
                 if hasattr(shot, "position") and asteroid.collision(shot):
                     # Award points based on asteroid size
                     if asteroid.radius == ASTEROID_MIN_RADIUS:
-                        score += 100  # Small asteroids worth more
+                        score += SCORE_SMALL_ASTEROID  # Small asteroids worth more
                     elif asteroid.radius == ASTEROID_MIN_RADIUS * 2:
-                        score += 50   # Medium asteroids
+                        score += SCORE_MEDIUM_ASTEROID   # Medium asteroids
                     else:
-                        score += 25   # Large asteroids
+                        score += SCORE_LARGE_ASTEROID   # Large asteroids
                     
                     print(f"Hit! Score: {score}")
                     shot.kill()
@@ -106,6 +106,11 @@ def main():
         
         timer_text = font.render(f"Time: {int(game_time)}s", True, (255, 255, 255))
         screen.blit(timer_text, (10, 50))
+        
+        # Display controls info
+        small_font = pygame.font.Font(None, 24)
+        controls_text = small_font.render("Controls: WASD=Move, SPACE=Shoot, F=Fullscreen", True, (200, 200, 200))
+        screen.blit(controls_text, (10, current_height - 30))
         
         # Update display
         pygame.display.flip()
